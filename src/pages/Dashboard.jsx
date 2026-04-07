@@ -9,6 +9,7 @@ export default function Dashboard({ onLogout, user }) {
   const [loading, setLoading] = useState(true);
   const [totalAcumulado, setTotalAcumulado] = useState(0);
   const [totalActividades, setTotalActividades] = useState(0);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     const loadFees = async () => {
@@ -75,9 +76,19 @@ export default function Dashboard({ onLogout, user }) {
     : "Usuario";
 
   return (
-    <div className="flex bg-surface min-h-screen w-full">
+    <div className="flex bg-surface min-h-screen w-full relative overflow-x-hidden">
+      {/* Sidebar Backdrop (Mobile only) */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden backdrop-blur-sm transition-opacity duration-300"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* SideNavBar Component */}
-      <aside className="fixed left-0 top-0 h-full flex flex-col py-8 bg-surface-container-low w-64 border-r-0 font-headline font-semibold z-20">
+      <aside
+        className={`fixed left-0 top-0 h-full flex flex-col py-8 bg-surface-container-low w-64 border-r-0 font-headline font-semibold z-40 transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full lg:translate-x-0"}`}
+      >
         <div className="px-6 mb-10">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
@@ -122,12 +133,20 @@ export default function Dashboard({ onLogout, user }) {
       </aside>
 
       {/* Main Content Wrapper */}
-      <div className="flex-1 ml-64 min-h-screen flex flex-col">
+      <div className="flex-1 lg:ml-64 min-h-screen flex flex-col w-full">
         {/* TopNavBar Component */}
         <header className="bg-glass docked full-width top-0 sticky z-10">
-          <div className="flex justify-between items-center w-full px-8 py-4 max-w-full">
-            <div className="flex items-center">
-              <span className="text-2xl font-bold tracking-tight text-primary">
+          <div className="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-full">
+            <div className="flex items-center gap-4">
+              {/* Mobile Menu Toggle */}
+              <button
+                onClick={() => setIsSidebarOpen(true)}
+                className="lg:hidden w-10 h-10 flex items-center justify-center text-primary rounded-xl hover:bg-primary/10 transition-colors"
+                aria-label="Open menu"
+              >
+                <span className="material-symbols-outlined text-2xl">menu</span>
+              </button>
+              <span className="text-xl md:text-2xl font-bold tracking-tight text-primary truncate max-w-[200px] xs:max-w-none">
                 Control de Mensualidades Año 2026
               </span>
             </div>
@@ -156,13 +175,13 @@ export default function Dashboard({ onLogout, user }) {
         </header>
 
         {/* Main Content Canvas */}
-        <main className="flex-1 p-10 max-w-6xl mx-auto w-full">
+        <main className="flex-1 p-4 md:p-8 lg:p-10 max-w-6xl mx-auto w-full overflow-hidden">
           {/* Page Heading Section */}
-          <section className="mb-12">
-            <h1 className="text-5xl font-extrabold text-primary tracking-tight mb-2">
+          <section className="mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight mb-2">
               Resumen Cuotas 1° Año Medio
             </h1>
-            <p className="text-on-surface-variant text-lg">
+            <p className="text-on-surface-variant text-base md:text-lg">
               Visualización detallada del estado de pagos del periodo actual.
             </p>
           </section>
@@ -179,7 +198,7 @@ export default function Dashboard({ onLogout, user }) {
                 <h2 className="text-5xl font-extrabold text-primary mb-4">
                   {loading
                     ? "..."
-                    : `$${totalAcumulado.toLocaleString("en-US", { minimumFractionDigits: 2 })}`}
+                    : `$${totalAcumulado.toLocaleString("en-US", { minimumFractionDigits: 0 })}`}
                 </h2>
                 <div className="flex items-center gap-2 text-on-surface-variant font-medium">
                   <span className="material-symbols-outlined text-green-600">
@@ -199,7 +218,7 @@ export default function Dashboard({ onLogout, user }) {
                 <h3 className="text-4xl font-extrabold">
                   {loading
                     ? "..."
-                    : `$${totalActividades.toLocaleString("en-US", { minimumFractionDigits: 2 })}`}
+                    : `$${totalActividades.toLocaleString("en-US", { minimumFractionDigits: 0 })}`}
                 </h3>
               </div>
             </div>
@@ -288,13 +307,13 @@ export default function Dashboard({ onLogout, user }) {
                       Total acumulado pagado:
                     </p>
                     <p className="text-xs text-on-surface-variant">
-                      Ciclo Anual 2025
+                      Ciclo Anual 2026
                     </p>
                   </div>
                   <span className="text-4xl font-extrabold text-primary">
                     {loading
                       ? "$0.00"
-                      : `$${totalAcumulado.toLocaleString("en-US", { minimumFractionDigits: 2 })}`}
+                      : `$${totalAcumulado.toLocaleString("en-US", { minimumFractionDigits: 0 })}`}
                   </span>
                 </div>
               </div>

@@ -6,6 +6,11 @@
       "sourceType": "github",
       "computedHash": "516bd2154eb843a8240e43d5b285229129853114ad7075a5e141e1c08e408c84"
     },
+    "frontend-ui-engineering": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "computedHash": "90c4cf0a1db789a132044dd0f787c5a1f88a8ce24acac81c75327b0b36d738c4"
+    },
     "javascript-pro": {
       "source": "jeffallan/claude-skills",
       "sourceType": "github",
