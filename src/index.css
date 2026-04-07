@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Google Sans", sans-serif;
+  --font-headline: "Google Sans", sans-serif;
+  --font-body: "Google Sans", sans-serif;
+  --font-label: "Google Sans", sans-serif;
+
+  --color-primary: #0A1931;
+  --color-primary-container: #0D1B33;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #406088;
+  --color-surface: #F6FAFD;
+  --color-surface-container-low: #F0F4F7;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-highest: #DFE3E6;
+  --color-on-surface-variant: #44474D;
+  --color-outline-variant: #C5C6CE;
+  --color-surface-tint: #515F7A;
+
+  --shadow-ambient: 0 24px 40px -12px rgba(10, 25, 49, 0.08); /* Ambient shadow */
+}
+
+@layer utilities {
+  .bg-glass {
+    @apply bg-surface/70 backdrop-blur-xl;
+  }
+  .bg-ghost-border {
+    @apply border border-outline-variant/15;
+  }
+}
