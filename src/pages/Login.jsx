@@ -37,7 +37,10 @@ export default function Login({ onLogin, users }) {
       <div className="w-full max-w-md bg-surface-container-lowest rounded-xl p-6 xs:p-8 md:p-12 shadow-[0_24px_40px_rgba(10,25,49,0.05)] z-10 transition-all duration-300">
         <div className="flex flex-col items-center mb-8 md:mb-10">
           <div className="w-12 h-12 md:w-16 md:h-16 bg-primary-container rounded-xl flex items-center justify-center mb-4 md:mb-6">
-            <span className="material-symbols-outlined text-white text-2xl md:text-3xl" aria-hidden="true">
+            <span
+              className="material-symbols-outlined text-white text-2xl md:text-3xl"
+              aria-hidden="true"
+            >
               payments
             </span>
           </div>
@@ -53,7 +56,10 @@ export default function Login({ onLogin, users }) {
           {/* Error Message */}
           {error && (
             <div className="bg-error-container text-on-error-container p-4 rounded-lg flex items-start gap-3 animate-in fade-in slide-in-from-top-2 duration-300">
-              <span className="material-symbols-outlined text-error" aria-hidden="true">
+              <span
+                className="material-symbols-outlined text-error"
+                aria-hidden="true"
+              >
                 error
               </span>
               <p className="text-sm font-medium">{error}</p>
@@ -69,7 +75,10 @@ export default function Login({ onLogin, users }) {
               Nombre de usuario
             </label>
             <div className="relative flex items-center">
-              <span className="material-symbols-outlined absolute left-0 text-outline text-lg" aria-hidden="true">
+              <span
+                className="material-symbols-outlined absolute left-0 text-outline text-lg"
+                aria-hidden="true"
+              >
                 person
               </span>
               <input
@@ -93,7 +102,10 @@ export default function Login({ onLogin, users }) {
               Password
             </label>
             <div className="relative flex items-center">
-              <span className="material-symbols-outlined absolute left-0 text-outline text-lg" aria-hidden="true">
+              <span
+                className="material-symbols-outlined absolute left-0 text-outline text-lg"
+                aria-hidden="true"
+              >
                 lock
               </span>
               <input
@@ -113,7 +125,10 @@ export default function Login({ onLogin, users }) {
                   showPassword ? "Ocultar contraseña" : "Ver contraseña"
                 }
               >
-                <span className="material-symbols-outlined text-lg" aria-hidden="true">
+                <span
+                  className="material-symbols-outlined text-lg"
+                  aria-hidden="true"
+                >
                   {showPassword ? "visibility_off" : "visibility"}
                 </span>
               </button>
@@ -151,7 +166,7 @@ export default function Login({ onLogin, users }) {
       {/* Decorative Branding Spotlight */}
       <div className="fixed bottom-8 left-1/2 -translate-x-1/2 text-center pointer-events-none">
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-outline opacity-40">
-          Premium Quota System © 2026
+          Premium Quota System © 2026 - Desarrollado por TomyTool
         </span>
       </div>
 
