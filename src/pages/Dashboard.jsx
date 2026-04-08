@@ -146,7 +146,7 @@ export default function Dashboard({ onLogout, user }) {
               >
                 <span className="material-symbols-outlined text-2xl">menu</span>
               </button>
-              <span className="text-xl md:text-2xl font-bold tracking-tight text-primary truncate max-w-[200px] xs:max-w-none">
+              <span className="text-xl md:text-2xl font-bold tracking-tight text-primary truncate max-w-[450px] xs:max-w-none">
                 Control de Mensualidades Año 2026
               </span>
             </div>
