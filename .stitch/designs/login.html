@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#e5e9ec",
+                        "on-secondary-fixed-variant": "#27486f",
+                        "surface-dim": "#d6dbdd",
+                        "inverse-surface": "#2c3134",
+                        "tertiary-fixed-dim": "#98ccf8",
+                        "secondary-fixed": "#d3e4ff",
+                        "surface-tint": "#515f7a",
+                        "surface-container": "#eaeef1",
+                        "primary": "#0A1931",
+                        "primary-fixed-dim": "#b9c7e6",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f6fafd",
+                        "surface-container-low": "#f0f4f7",
+                        "secondary": "#406088",
+                        "secondary-container": "#b1d1ff",
+                        "inverse-on-surface": "#edf1f4",
+                        "outline-variant": "#c5c6ce",
+                        "on-tertiary-fixed": "#001e30",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#b9c7e6",
+                        "surface-container-highest": "#dfe3e6",
+                        "on-primary-fixed": "#0d1b33",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#171c1f",
+                        "on-primary-container": "#7684a1",
+                        "on-surface-variant": "#44474d",
+                        "surface-variant": "#dfe3e6",
+                        "primary-fixed": "#d7e2ff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#001c38",
+                        "primary-container": "#0d1b33",
+                        "outline": "#75777e",
+                        "tertiary-container": "#001e30",
+                        "on-tertiary-container": "#5489b1",
+                        "on-secondary-container": "#395a81",
+                        "tertiary-fixed": "#cbe6ff",
+                        "surface": "#f6fafd",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#a9c9f6",
+                        "on-tertiary-fixed-variant": "#054b70",
+                        "on-background": "#171c1f",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#394761",
+                        "background": "#f6fafd"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ghost-input {
+            border: none;
+            border-bottom: 1px solid rgba(197, 198, 206, 0.2);
+            background: transparent;
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .ghost-input:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom: 2px solid #406088;
+            background: rgba(240, 244, 247, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<main class="flex-grow flex items-center justify-center px-6 py-12 relative overflow-hidden">
+<!-- Background decorative elements -->
+<div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<!-- Login Card -->
+<div class="w-full max-w-md bg-surface-container-lowest rounded-xl p-10 md:p-12 shadow-[0_24px_40px_rgba(10,25,49,0.05)] z-10">
+<div class="flex flex-col items-center mb-10">
+<div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white text-3xl">payments</span>
+</div>
+<h1 class="font-headline font-bold text-3xl tracking-tight text-primary">
+                    Iniciar Sesión
+                </h1>
+<p class="text-on-surface-variant text-sm mt-2 font-medium">Control de Mensualidades</p>
+</div>
+<form action="#" class="space-y-8">
+<!-- Username Field -->
+<div class="relative">
+<label class="block text-[11px] font-bold uppercase tracking-wider text-secondary mb-1" for="username">
+                        Nombre de usuario
+                    </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-0 text-outline text-lg">person</span>
+<input class="ghost-input w-full py-3 pl-8 text-on-surface placeholder:text-outline-variant/60" id="username" name="username" placeholder="Introduce tu usuario" required="" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="relative">
+<label class="block text-[11px] font-bold uppercase tracking-wider text-secondary mb-1" for="password">
+                        Password
+                    </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-0 text-outline text-lg">lock</span>
+<input class="ghost-input w-full py-3 pl-8 text-on-surface placeholder:text-outline-variant/60" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-4">
+<button class="w-full py-4 bg-primary text-white font-headline font-bold rounded-xl shadow-[0_8px_20px_rgba(10,25,49,0.15)] hover:opacity-90 transition-all duration-300 active:scale-[0.98]" type="submit">
+                        Ingresar
+                    </button>
+</div>
+<!-- Footer Links -->
+<div class="flex items-center justify-between pt-6">
+<a class="text-xs font-bold text-secondary uppercase tracking-widest hover:underline underline-offset-4 decoration-1" href="#">
+                        ¿Olvidaste tu clave?
+                    </a>
+<a class="text-xs font-bold text-on-surface-variant uppercase tracking-widest hover:text-primary transition-colors" href="#">
+                        Ayuda
+                    </a>
+</div>
+</form>
+</div>
+<!-- Decorative Branding Spotlight -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 text-center pointer-events-none">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-outline opacity-40">
+                Premium Quota System © 2024
+            </span>
+</div>
+</main>
+<!-- Background Image with Editorial Feel -->
+<div class="hidden lg:block fixed top-0 right-0 w-[30%] h-full bg-surface-container-low overflow-hidden -z-10">
+<img alt="Minimal architectural detail" class="w-full h-full object-cover mix-blend-soft-light opacity-30 grayscale" data-alt="Abstract architectural minimalist concrete structure with clean lines and soft natural daylight shadows in a serene environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7WN4nnG-QVbl_3I1PR8w6cW8lM-QfY8G2We49IzOLXfBsV1ispxfEYND5kOS--TErfsyAlttTLE2Ef8i76ija1tC-tJ-5gp_m92DSPn8FPst0IN61RenNygw0qN3g0JEU67xJ5GRDIzimmiALOiehDTUYQxjdLr3r-SCWHj7bhvsTQh3qviYmEPvEslLEo46AV1PG9mCNIZL-a8nX_dj67tXadE9Ha-1bxr2bqHHXgvRuvpA5TiZCNX2YQINbv-fXDUSFXrXuq2sO"/>
+</div>
+</body></html>
